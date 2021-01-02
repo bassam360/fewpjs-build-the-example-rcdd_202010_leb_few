@@ -3,11 +3,11 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-let glyphStates = {
+let gStatus = {
   "♡": "♥",
   "♥": "♡"
 };
-let colorStates = {
+let cStatus = {
   "red" : "",
   "": "red"
 };
@@ -16,8 +16,8 @@ function likeCallback(e) {
   let x = e.target;
   mimicServerCall("bogusUrl")
  .then(function(serverMessage){
- x.innerText = glyphStates[x.innerText];
-    x.style.color = colorStates[x.style.color];
+ x.innerText = gStatus[x.innerText];
+    x.style.color = cStatus[x.style.color];
     })
     .catch(function(error) {
       document.getElementById("modal").className = "";
